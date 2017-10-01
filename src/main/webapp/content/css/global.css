@@ -231,3 +231,15 @@ Social Buttons
     color: #fff;
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
+
+.jh-btn-shopify {
+    background-color: #5c6ac4;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+.jh-btn-shopify:hover, .jh-btn-shopify:focus, .jh-btn-shopify:active, .jh-btn-shopify.active, .open > .dropdown-toggle.jh-btn-shopify {
+    background-color: #5c6ac4;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #fff;
+}

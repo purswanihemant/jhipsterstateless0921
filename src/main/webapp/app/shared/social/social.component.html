@@ -3,5 +3,6 @@
         <span>Sign in with {{ label }}</span>
     </button>
     <input name="scope" type="hidden" value="{{ providerSetting }}"/>
+    <input name="grant_options[]" type="hidden" value="{{ grantOption }}"/>
     <input name="_csrf" type="hidden" value="{{ csrf }}"/>
 </form>

@@ -5,6 +5,7 @@ import com.mycompany.myapp.repository.CustomSocialUsersConnectionRepository;
 import com.mycompany.myapp.security.jwt.TokenProvider;
 import com.mycompany.myapp.security.social.CustomSignInAdapter;
 
+import com.mycompany.myapp.social.shopify.ShopifyConnectionFactory;
 import io.github.jhipster.config.JHipsterProperties;
 
 import org.slf4j.Logger;
@@ -107,6 +108,23 @@ public class SocialConfiguration implements SocialConfigurer {
             );
         } else {
             log.error("Cannot configure TwitterConnectionFactory id or secret null");
+        }
+
+        //Shopify configuration
+        String shopifyClientId = environment.getProperty("spring.social.shopify.client-id");
+        String shopifyClientSecret = environment.getProperty("spring.social.shopify.client-secret");
+        String shopifyShopName = environment.getProperty("spring.social.shopify.shop-name");
+        if (shopifyClientId != null && shopifyClientSecret != null && shopifyShopName != null) {
+            log.debug("Configuring ShopifyConnectionFactory");
+            connectionFactoryConfigurer.addConnectionFactory(
+                new ShopifyConnectionFactory(
+                    shopifyClientId,
+                    shopifyClientSecret,
+                    shopifyShopName
+                )
+            );
+        } else {
+            log.error("Cannot configure ShopifyConnectionFactory id or secret or shop name null");
         }
 
         // jhipster-needle-add-social-connection-factory

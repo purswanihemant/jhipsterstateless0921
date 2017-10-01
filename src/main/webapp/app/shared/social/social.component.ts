@@ -11,6 +11,7 @@ export class JhiSocialComponent implements OnInit {
     label: string;
     providerSetting: string;
     providerURL: string;
+    grantOption: string;
     csrf: string;
 
     constructor(
@@ -22,6 +23,7 @@ export class JhiSocialComponent implements OnInit {
         this.label = this.provider.charAt(0).toUpperCase() + this.provider.slice(1);
         this.providerSetting = this.socialService.getProviderSetting(this.provider);
         this.providerURL = this.socialService.getProviderURL(this.provider);
+        this.grantOption = this.socialService.getGrantOption(this.provider);
         this.csrf = this.csrfService.getCSRF();
     }
 }

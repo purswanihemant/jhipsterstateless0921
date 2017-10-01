@@ -61,7 +61,11 @@ spring:
             client-id: xxx
             client-secret: xxx
 
-        # jhipster-needle-add-social-configuration
+        # see https://help.shopify.com/api/getting-started/authentication/oauth
+        shopify:
+            client-id: xxx
+            client-secret: xxx
+            shop-name: xxx
 
 security:
     basic:
