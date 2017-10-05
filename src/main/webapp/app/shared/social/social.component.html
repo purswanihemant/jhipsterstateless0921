@@ -3,6 +3,10 @@
         <span>Sign in with {{ label }}</span>
     </button>
     <input name="scope" type="hidden" value="{{ providerSetting }}"/>
-    <input name="grant_options[]" type="hidden" value="{{ grantOption }}"/>
+    <input name="grant_options[]" type="hidden" value="{{ grantOption }}" *ngIf="provider == 'shopify'"/>
     <input name="_csrf" type="hidden" value="{{ csrf }}"/>
+    <div class="input-group" *ngIf="provider == 'shopify'">
+        <input type="text" class="form-control" name="shop_name" id="shop_name" required>
+        <span class="input-group-addon">.myshopify.com</span>
+    </div>
 </form>

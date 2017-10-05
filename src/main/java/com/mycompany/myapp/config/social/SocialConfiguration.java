@@ -113,18 +113,16 @@ public class SocialConfiguration implements SocialConfigurer {
         //Shopify configuration
         String shopifyClientId = environment.getProperty("spring.social.shopify.client-id");
         String shopifyClientSecret = environment.getProperty("spring.social.shopify.client-secret");
-        String shopifyShopName = environment.getProperty("spring.social.shopify.shop-name");
-        if (shopifyClientId != null && shopifyClientSecret != null && shopifyShopName != null) {
+        if (shopifyClientId != null && shopifyClientSecret != null) {
             log.debug("Configuring ShopifyConnectionFactory");
             connectionFactoryConfigurer.addConnectionFactory(
                 new ShopifyConnectionFactory(
                     shopifyClientId,
-                    shopifyClientSecret,
-                    shopifyShopName
+                    shopifyClientSecret
                 )
             );
         } else {
-            log.error("Cannot configure ShopifyConnectionFactory id or secret or shop name null");
+            log.error("Cannot configure ShopifyConnectionFactory id or secret null");
         }
 
         // jhipster-needle-add-social-connection-factory

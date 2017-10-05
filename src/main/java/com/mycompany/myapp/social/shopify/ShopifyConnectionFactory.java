@@ -11,8 +11,8 @@ import java.util.Optional;
 
 public class ShopifyConnectionFactory extends OAuth2ConnectionFactory<Map<String, Object>> {
 
-    public ShopifyConnectionFactory(String appId, String appSecret, String shopName) {
-        super("shopify", new ShopifyServiceProvider(appId, appSecret, shopName), new ShopifyAdapter());
+    public ShopifyConnectionFactory(String appId, String appSecret) {
+        super("shopify", new ShopifyServiceProvider(appId, appSecret), new ShopifyAdapter());
     }
 
     @Override

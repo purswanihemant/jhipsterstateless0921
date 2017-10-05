@@ -65,7 +65,6 @@ spring:
         shopify:
             client-id: xxx
             client-secret: xxx
-            shop-name: xxx
 
 security:
     basic:
